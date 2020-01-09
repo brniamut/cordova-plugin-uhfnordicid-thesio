@@ -19,7 +19,7 @@
         </config-file>
 	    	<source-file src="src/android/Uhfnordicid.java" target-dir="src/it/dynamicid/uhfnordicid" />
 	    	<lib-file src="src/NurApi.jar" />
-
+		<lib-file src="src/TDTLib.jar" />
     </platform>
     </plugin>
 	
