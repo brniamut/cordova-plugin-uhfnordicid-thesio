@@ -20,7 +20,7 @@ public class Uhfnordicid extends CordovaPlugin {
     }
 
     private void scan(String epc, CallbackContext callbackContext) {
-       	    
+       	    /*
             InventoryUhf iu = new InventoryUhf();
 		
 	    	iu.StartInventoryStream();
@@ -32,6 +32,8 @@ public class Uhfnordicid extends CordovaPlugin {
 		    iu.StopInventoryStream();
 		
 		    String result = iu.GetTags();
+	    		*/
+	    	    String result = epc;
 	    
             Toast.makeText(webView.getContext(), result, Toast.LENGTH_LONG).show();
             callbackContext.success(result);
