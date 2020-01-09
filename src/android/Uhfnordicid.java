@@ -8,43 +8,62 @@ import org.json.JSONException;
 import android.content.Context;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Uhfnordicid extends CordovaPlugin {
-    @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if ("scan".equals(action)) {
-            scan(args.getString(0), callbackContext);
-            return true;
-        }
+	@Override
+	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+		if ("scan".equals(action)) {
+			scan(args.getString(0), callbackContext);
+			return true;
+		}
 
-        return false;
-    }
+		return false;
+	}
 
-    private void scan(String msg, CallbackContext callbackContext) {
-       	    
-            InventoryUhf iu = new InventoryUhf();
-		
-	    	iu.StartInventoryStream();
-    		try {
-			    Thread.sleep(5000);
-		    } catch (Exception e) {
+	private void scan(String epc, CallbackContext callbackContext) {
+		try {
+			InventoryUhf iu = new InventoryUhf();
+			iu.StartInventoryStream();
+			try {
+				Thread.sleep(5000);
+			} catch (Exception e) {
 
-		    }
-		    iu.StopInventoryStream();
-		
-		    String result = iu.GetTags();
-	    
-	    Toast.makeText(webView.getContext(), result, Toast.LENGTH_LONG).show();
-            callbackContext.success(result);
-	
-	
-	/*
-	if (msg == null || msg.length() == 0) {
-            callbackContext.error("Empty message!");
-        } else {
-            Toast.makeText(webView.getContext(), msg, Toast.LENGTH_LONG).show();
-            callbackContext.success(msg);
-        }
-	*/
-        
-    }
+			}
+			iu.StopInventoryStream();
+			String result = "NO-TAGS";
+
+			if(epc.isEmpty()) {
+				result = iu.GetTags();
+				if(result.isEmpty()){
+					result = "NO-TAGS";
+				}
+			}else {
+				result = iu.GetTags();
+				String tags[] = result.split(",");
+				List<String> lista = new ArrayList<String>();
+
+				for(int i=0; i<tags.length; i++) {
+					lista.add(tags[i]);
+				}
+
+				if(lista.contains(epc)) {
+					result="OK";
+				}else {
+					result="KO";
+				}
+
+			}
+
+
+			//Toast.makeText(webView.getContext(), result, Toast.LENGTH_LONG).show();
+			callbackContext.success(result);
+
+		} catch (Exception e) {
+			callbackContext.error(e);
+		}
+
+
+	}
 }
