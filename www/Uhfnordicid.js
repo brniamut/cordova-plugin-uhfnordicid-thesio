@@ -4,7 +4,7 @@ var Uhfnordicid = function() {
     console.log('Uhfnordicid instanced');
 };
 
-Uhfnordicid.prototype.scan = function(msg, onSuccess, onError) {
+Uhfnordicid.prototype.scan = function(epc, waittime, onSuccess, onError) {
     var errorCallback = function(obj) {
         onError(obj);
     };
@@ -13,7 +13,7 @@ Uhfnordicid.prototype.scan = function(msg, onSuccess, onError) {
         onSuccess(obj);
     };
 
-    exec(successCallback, errorCallback, 'Uhfnordicid', 'scan', [msg]);
+    exec(successCallback, errorCallback, 'Uhfnordicid', 'scan', [epc, waittime]);
 };
 
 if (typeof module != 'undefined' && module.exports) {
