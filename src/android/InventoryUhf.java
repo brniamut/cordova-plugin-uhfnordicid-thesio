@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.nordicid.nurapi.NurApi.BANK_EPC;
-import static com.nordicid.nurapi.NurApi.BANK_TID;
-import static com.nordicid.nurapi.NurApi.BANK_USER;
-import static com.nordicid.nurapi.NurApi.MAX_EPC_LENGTH;
+import com.nordicid.nurapi.NurApi.BANK_EPC;
+import com.nordicid.nurapi.NurApi.BANK_TID;
+import com.nordicid.nurapi.NurApi.BANK_USER;
+import com.nordicid.nurapi.NurApi.MAX_EPC_LENGTH;
 
 public class InventoryUhf {
 
