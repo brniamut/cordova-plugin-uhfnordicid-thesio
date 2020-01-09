@@ -17,11 +17,12 @@
                 <param name="android-package" value="it.dynamicid.Uhfnordicid"/>
             </feature>
         </config-file>
+	    	<source-file src="src/TDTLib.jar" target-dir="src/it/dynamicid/uhfnordicid" />
+	    	<source-file src="src/NurApi.jar" target-dir="src/it/dynamicid/uhfnordicid" />
 		<source-file src="src/android/Uhfnordicid.java" target-dir="src/it/dynamicid/uhfnordicid" />
 	    
 	        <source-file src="src/android/InventoryUhf.java" target-dir="src/it/dynamicid/uhfnordicid" />
-	    	<source-file src="src/TDTLib.jar" target-dir="src/it/dynamicid/uhfnordicid" />
-	    	<source-file src="src/NurApi.jar" target-dir="src/it/dynamicid/uhfnordicid" />
+	    	
 
 
     </platform>
