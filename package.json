@@ -1,0 +1,30 @@
+{
+  "name": "cordova-plugin-uhfnordicid",
+  "version": "0.0.1",
+  "description": "Cordova Rfid UHF Nordic ID Plugin",
+  "cordova": {
+    "id": "cordova-plugin-uhfnordicid",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "device",
+    "rfid",
+    "uhf",
+    "nordic",
+    "id",
+    "nordicid",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Saverio Di Domenico",
+  "license": "Apache 2.0"
+}

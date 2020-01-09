@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="cordova-plugin-uhfnordicid" version="0.0.1">
+        <name>Uhfnordicid</name>
+        <description>Cordova Rfid UHF Nordic ID Plugin</description>
+        <license>Apache 2.0</license>
+        <keywords>cordova,device,rfid,uhf,nordic,id,nordicid</keywords>
+		<engines>
+			<engine name="cordova" version=">=3.0.0" />
+		</engines>
+        <js-module src="www/Uhfnordicid.js" name="Uhfnordicid">
+            <clobbers target="Uhfnordicid" />
+        </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Uhfnordicid">
+                <param name="android-package" value="it.dynamicid.Uhfnordicid"/>
+            </feature>
+        </config-file>
+		<source-file src="src/android/Uhfnordicid.java" target-dir="src/it/dynamicid/uhfnordicid" />
+    </platform>
+    </plugin>
+	
