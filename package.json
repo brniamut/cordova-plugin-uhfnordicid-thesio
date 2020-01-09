@@ -8,6 +8,10 @@
       "android"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaverioDiDomenico/cordova-plugin-uhfnordicid.git"
+  },
   "keywords": [
     "cordova",
     "device",
@@ -26,5 +30,9 @@
     }
   ],
   "author": "Saverio Di Domenico",
-  "license": "Apache 2.0"
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfnordicid/issues"
+  },
+  "homepage": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfnordicid#readme"
 }
