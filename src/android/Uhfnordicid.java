@@ -15,19 +15,19 @@ public class Uhfnordicid extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		if ("scan".equals(action)) {
-			scan(args.getString(0), callbackContext);
+			scan(args.getString(0), args.getLong(1), callbackContext);
 			return true;
 		}
 
 		return false;
 	}
 
-	private void scan(String epc, CallbackContext callbackContext) {
+	private void scan(String epc, long waittime, CallbackContext callbackContext) {
 		try {
 			InventoryUhf iu = new InventoryUhf();
 			iu.StartInventoryStream();
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(waittime);
 			} catch (Exception e) {
 
 			}
