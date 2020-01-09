@@ -18,6 +18,7 @@
             </feature>
         </config-file>
 		<source-file src="src/android/Uhfnordicid.java" target-dir="src/it/dynamicid/uhfnordicid" />
+	        <source-file src="src/android/InventoryUhf.java" target-dir="src/it/dynamicid/inventoryuhf" />
     </platform>
     </plugin>
 	
