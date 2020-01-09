@@ -19,7 +19,7 @@ public class Uhfnordicid extends CordovaPlugin {
         return false;
     }
 
-    private void scan(String epc, CallbackContext callbackContext) {
+    private void scan(String msg, CallbackContext callbackContext) {
        	    /*
             InventoryUhf iu = new InventoryUhf();
 		
@@ -33,10 +33,12 @@ public class Uhfnordicid extends CordovaPlugin {
 		
 		    String result = iu.GetTags();
 	    		*/
-	    	    String result = epc;
-	    
-            Toast.makeText(webView.getContext(), result, Toast.LENGTH_LONG).show();
-            callbackContext.success(result);
+if (msg == null || msg.length() == 0) {
+            callbackContext.error("Empty message!");
+        } else {
+            Toast.makeText(webView.getContext(), msg, Toast.LENGTH_LONG).show();
+            callbackContext.success(msg);
+        }
         
     }
 }
