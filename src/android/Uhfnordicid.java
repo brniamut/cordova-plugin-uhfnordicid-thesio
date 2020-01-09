@@ -61,7 +61,7 @@ public class Uhfnordicid extends CordovaPlugin {
 			callbackContext.success(result);
 
 		} catch (Exception e) {
-			callbackContext.error(e);
+			callbackContext.error(e.toString());
 		}
 
 
