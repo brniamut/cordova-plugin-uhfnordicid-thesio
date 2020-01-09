@@ -11,20 +11,29 @@ import android.widget.Toast;
 public class Uhfnordicid extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if ("show".equals(action)) {
-            show(args.getString(0), callbackContext);
+        if ("scan".equals(action)) {
+            scan(args.getString(0), callbackContext);
             return true;
         }
 
         return false;
     }
 
-    private void show(String msg, CallbackContext callbackContext) {
-        if (msg == null || msg.length() == 0) {
-            callbackContext.error("Empty message!");
-        } else {
-            Toast.makeText(webView.getContext(), msg, Toast.LENGTH_LONG).show();
-            callbackContext.success(msg);
-        }
+    private void scan(String epc, CallbackContext callbackContext) {
+       
+            InventoryUhf iu = new InventoryUhf();
+		
+	    	iu.StartInventoryStream();
+    		try {
+			    Thread.sleep(5000);
+		    } catch (Exception e) {
+
+		    }
+		    iu.StopInventoryStream();
+		
+		    String result = iu.GetTags();
+            Toast.makeText(webView.getContext(), result, Toast.LENGTH_LONG).show();
+            callbackContext.success(result);
+        
     }
 }
