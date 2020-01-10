@@ -25,6 +25,7 @@ public class Uhfnordicid extends CordovaPlugin {
 	private void scan(String epc, long waittime, CallbackContext callbackContext) {
 		try {
 			InventoryUhf iu = new InventoryUhf();
+			Toast.makeText(webView.getContext(), iu + "", Toast.LENGTH_LONG).show();
 			iu.StartInventoryStream();
 			try {
 				Thread.sleep(waittime);
