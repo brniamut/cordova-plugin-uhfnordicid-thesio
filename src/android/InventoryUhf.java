@@ -70,7 +70,7 @@ public class InventoryUhf {
 
          try {
              String strAddress;
-             mAcTr = NurDeviceSpec.createAutoConnectTransport(getApplicationContext(), mNurApi, spec);        
+             mAcTr = NurDeviceSpec.createAutoConnectTransport(null, mNurApi, spec);        
              strAddress = spec.getAddress();
              mAcTr.setAddress(strAddress);
          } catch (NurApiException e) {
