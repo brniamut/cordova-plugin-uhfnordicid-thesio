@@ -21,7 +21,7 @@
 	    	<source-file src="src/android/InventoryUhf.java" target-dir="src/it/dynamicid/uhfnordicid" />
 	    	<lib-file src="src/NurApi.jar" />
 		<lib-file src="src/TDTLib.jar" />
-	        <lib-file src="src/NurApiAndroid.aar" />
+	        <lib-file src="src/NurApiAndroid.jar" />
     </platform>
     </plugin>
 	
