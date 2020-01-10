@@ -123,6 +123,12 @@ public class InventoryUhf {
 			retval = e.toString();
 		}
 		
+		try{
+			mNurApi.disconnect();
+		}catch(Exception e){
+			
+		}
+		
 		return retval;
 	}
     
