@@ -57,6 +57,7 @@ public class InventoryUhf {
 	public InventoryUhf() {
 		super();
 		mNurApi = new NurApi();
+		mAccExt = new AccessoryExtension(mNurApi);
 		mNurApi.setListener(mNurApiEventListener);
 		try {
 			mNurApi.setSetupTxLevel(NurApi.TXLEVEL_9);
