@@ -1,6 +1,7 @@
 package it.dynamicid;
 
 
+
 import com.nordicid.nurapi.*;
 import com.nordicid.tdt.*;
 
@@ -55,11 +56,14 @@ public class InventoryUhf {
     static String mTagUnderReview;
 	
     private NurApiAutoConnectTransport mAcTr;
+    
+    List<String> listaTags;
 
     //===================================================================
 
 	public InventoryUhf(Context context) {
 		super();
+		listaTags = new ArrayList<String>();
 		mNurApi = new NurApi();
 		
 		 String specStr = "type=INT;addr=integrated_reader";
@@ -198,26 +202,11 @@ public class InventoryUhf {
     public String GetTags() {
     	String retval = "";
     	
-    	/*
-    	try {
-			mNurApi.fetchTagAt(true, 0);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	*/
-    	
-    	List<String> lista = new ArrayList<String>();
-    	
-    	NurTagStorage tagStorage = mNurApi.getStorage();
-    	for(int i=0; i<tagStorage.size(); i++) {
+
+    	for(int i=0; i<listaTags.size(); i++) {
     		String epcString;
-            NurTag tag = tagStorage.get(i);
-            epcString = NurApi.byteArrayToHexString(tag.getEpc());
-            if(!lista.contains(epcString)) {
-            	lista.add(epcString);
-            	retval = retval + epcString + ",";
-            }
+            epcString = listaTags.get(i);
+           	retval = retval + epcString + ",";           
     	}   	
     	
     	return retval;
@@ -250,13 +239,13 @@ public class InventoryUhf {
 
                     if(event.tagsAdded>0) {
                         //At least one new tag found
-                    	/*
-                        if(MainActivity.IsAccessorySupported()){
-                            mAccExt.beepAsync(20); //Beep on device
-                        }else{
-                            Beeper.beep(Beeper.BEEP_40MS); //Cannot beep on device so we beep on phone
-                        }
-                        */
+                    	
+                    	try {
+                    		mAccExt.beepAsync(20); //Beep on device
+                    	}catch (Exception e) {
+							// TODO: handle exception
+						}
+                        
 
                         NurTagStorage tagStorage = mNurApi.getStorage(); //Storage contains all tags found
 
@@ -269,6 +258,10 @@ public class InventoryUhf {
                             epcString = NurApi.byteArrayToHexString(tag.getEpc());
                             //showing just EPC of last tag
                             mUiEpcMsg = epcString;
+                            
+                            if(!listaTags.contains(epcString)) {
+                            	listaTags.add(epcString);                            	
+                            }
                         }
 
                         //Finally show count of tags found
