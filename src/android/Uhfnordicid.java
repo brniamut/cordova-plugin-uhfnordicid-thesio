@@ -31,13 +31,13 @@ public class Uhfnordicid extends CordovaPlugin {
 			} catch (Exception e) {
 
 			}
-			iu.StopInventoryStream();
+			//iu.StopInventoryStream();
 			String result = "NO-TAGS";
 
 			if(epc.isEmpty()) {
 				result = iu.GetTags();
 				if(result.isEmpty()){
-					result = "NO-TAGS";
+					result = "NOTAGS";
 				}
 			}else {
 				result = iu.GetTags();
