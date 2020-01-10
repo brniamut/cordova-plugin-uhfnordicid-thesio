@@ -67,7 +67,7 @@ public class Uhfnordicid extends CordovaPlugin {
 			}
 
 
-			Toast.makeText(webView.getContext(), iu.mUiResultMsg, Toast.LENGTH_LONG).show();
+			//Toast.makeText(webView.getContext(), iu.mUiResultMsg, Toast.LENGTH_LONG).show();
 			callbackContext.success(result);
 
 		} catch (Exception e) {
