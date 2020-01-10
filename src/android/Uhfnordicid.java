@@ -26,7 +26,7 @@ public class Uhfnordicid extends CordovaPlugin {
 	private void scan(String epc, long waittime, CallbackContext callbackContext) {
 		try {
 			InventoryUhf iu = new InventoryUhf();
-			/*
+			
 			iu.StartInventoryStream();
 			try {
 				Thread.sleep(waittime);
@@ -34,18 +34,18 @@ public class Uhfnordicid extends CordovaPlugin {
 
 			}
 			iu.StopInventoryStream();
-			*/
+			
 			
 			String result = "NO-TAGS";
 
 			if(epc.isEmpty()) {
-				//result = iu.GetTags();
-				result = iu.Inv();
-				/*
+				result = iu.GetTags();
+				//result = iu.Inv();
+				
 				if(result.isEmpty()){
 					result = "NO-TAGS";
 				}
-				*/
+				
 								
 			}else {
 				result = iu.GetTags();
