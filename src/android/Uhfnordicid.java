@@ -40,12 +40,13 @@ public class Uhfnordicid extends CordovaPlugin {
 			String result = "NO-TAGS";
 
 			if(epc.isEmpty()) {
-				result = iu.GetTags();
-				//result = iu.Inv();
-				
+				//result = iu.GetTags();
+				result = iu.Inv();
+				/*
 				if(result.isEmpty()){
 					result = "NO-TAGS";
 				}
+				*/
 				
 								
 			}else {
