@@ -79,7 +79,7 @@ public class InventoryUhf {
 		
 			
 		try {
-			//mNurApi.connect();
+			mNurApi.connect();
 			mNurApi.setSetupTxLevel(NurApi.TXLEVEL_9);
 		} catch (Exception e) {
 			
