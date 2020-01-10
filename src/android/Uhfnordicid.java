@@ -11,7 +11,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Uhfnordicid extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -25,7 +24,9 @@ public class Uhfnordicid extends CordovaPlugin {
 
 	private void scan(String epc, long waittime, CallbackContext callbackContext) {
 		try {
-			InventoryUhf iu = new InventoryUhf();
+			 Context context = this.cordova.getActivity().getApplicationContext();
+			
+			InventoryUhf iu = new InventoryUhf(context);
 			
 			iu.StartInventoryStream();
 			try {
