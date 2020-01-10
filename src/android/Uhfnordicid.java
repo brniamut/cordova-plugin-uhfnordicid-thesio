@@ -11,8 +11,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nordicid.nurapi.*;
-import com.nordicid.tdt.*;
 
 public class Uhfnordicid extends CordovaPlugin {
 	@Override
@@ -28,9 +26,6 @@ public class Uhfnordicid extends CordovaPlugin {
 	private void scan(String epc, long waittime, CallbackContext callbackContext) {
 		try {
 			InventoryUhf iu = new InventoryUhf();
-
-			NurRespInventory resp = iu.mNurApi.inventory(4, 4, 0); //Rounds=2, Q=4, Session=0
-			Toast.makeText(webView.getContext(), resp+"", Toast.LENGTH_LONG).show();
 			/*
 			iu.StartInventoryStream();
 			try {
@@ -44,12 +39,14 @@ public class Uhfnordicid extends CordovaPlugin {
 			String result = "NO-TAGS";
 
 			if(epc.isEmpty()) {
-				result = iu.GetTags();
+				//result = iu.GetTags();
+				result = iu.Inv();
+				/*
 				if(result.isEmpty()){
 					result = "NO-TAGS";
 				}
-				
-				result = iu.mTagsAddedCounter + "";
+				*/
+								
 			}else {
 				result = iu.GetTags();
 				String tags[] = result.split(",");
