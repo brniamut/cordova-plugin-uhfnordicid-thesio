@@ -17,7 +17,7 @@ public class InventoryUhf {
     public static final String TAG = "NUR_SAMPLE";
 
     //Handles of these will be fetch from MainActivity
-    private NurApi mNurApi;
+    public NurApi mNurApi;
     private static AccessoryExtension mAccExt;
 
 
