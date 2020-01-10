@@ -58,7 +58,7 @@ public class InventoryUhf {
 
     //===================================================================
 
-	public InventoryUhf() {
+	public InventoryUhf(Context context) {
 		super();
 		mNurApi = new NurApi();
 		
@@ -71,7 +71,6 @@ public class InventoryUhf {
          }
 
          try {
-             Context context = this.cordova.getActivity().getApplicationContext();
              String strAddress;
              mAcTr = NurDeviceSpec.createAutoConnectTransport(context, mNurApi, spec);        
              strAddress = spec.getAddress();
