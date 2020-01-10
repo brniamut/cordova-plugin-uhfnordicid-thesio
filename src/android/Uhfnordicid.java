@@ -25,14 +25,19 @@ public class Uhfnordicid extends CordovaPlugin {
 	private void scan(String epc, long waittime, CallbackContext callbackContext) {
 		try {
 			InventoryUhf iu = new InventoryUhf();
-			Toast.makeText(webView.getContext(), iu + "", Toast.LENGTH_LONG).show();
+
+			NurRespInventory resp = iu.mNurApi.inventory(4, 4, 0); //Rounds=2, Q=4, Session=0
+			Toast.makeText(webView.getContext(), resp, Toast.LENGTH_LONG).show();
+			/*
 			iu.StartInventoryStream();
 			try {
 				Thread.sleep(waittime);
 			} catch (Exception e) {
 
 			}
-			//iu.StopInventoryStream();
+			iu.StopInventoryStream();
+			*/
+			
 			String result = "NO-TAGS";
 
 			if(epc.isEmpty()) {
