@@ -51,17 +51,35 @@ public class InventoryUhf {
 
     //This variable hold last tag epc for making sure same tag found 3 times in row.
     static String mTagUnderReview;
+	
+    private NurApiAutoConnectTransport mAcTr;
 
     //===================================================================
 
 	public InventoryUhf() {
 		super();
 		mNurApi = new NurApi();
-		//mNurApi = createNurApi();
-		//mNurApi.setTransport(NurApiSerialTransport("/dev/ttyACM0", 115200));
+		
+		 String specStr = "type=INT;addr=integrated_reader";
+		 NurDeviceSpec spec = new NurDeviceSpec(specStr);
+
+         if (mAcTr != null) {
+             System.out.println("Dispose transport");
+             mAcTr.dispose();
+         }
+
+         try {
+             String strAddress;
+             mAcTr = NurDeviceSpec.createAutoConnectTransport(Context.getApplicationContext(), mNurApi, spec);        
+             strAddress = spec.getAddress();
+             mAcTr.setAddress(strAddress);
+         } catch (NurApiException e) {
+             e.printStackTrace();
+         }
+		
 			
 		try {
-			mNurApi.connect();
+			//mNurApi.connect();
 			mNurApi.setSetupTxLevel(NurApi.TXLEVEL_9);
 		} catch (Exception e) {
 			
