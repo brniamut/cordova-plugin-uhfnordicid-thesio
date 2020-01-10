@@ -56,19 +56,19 @@ public class InventoryUhf {
 
 	public InventoryUhf() {
 		super();
-		//mNurApi = new NurApi();
-		mNurApi = createNurApi();
+		mNurApi = new NurApi();
+		//mNurApi = createNurApi();
 		//mNurApi.setTransport(NurApiSerialTransport("/dev/ttyACM0", 115200));
 			
-		mNurApi.connect();
-		
-		mAccExt = new AccessoryExtension(mNurApi);
-		mNurApi.setListener(mNurApiEventListener);
 		try {
+			mNurApi.connect();
 			mNurApi.setSetupTxLevel(NurApi.TXLEVEL_9);
 		} catch (Exception e) {
 			
 		} 
+		
+		mAccExt = new AccessoryExtension(mNurApi);
+		mNurApi.setListener(mNurApiEventListener);
 	}
 	
 	public String Inv() {
