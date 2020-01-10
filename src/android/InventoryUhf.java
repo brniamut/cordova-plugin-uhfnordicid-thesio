@@ -78,7 +78,12 @@ public class InventoryUhf {
          } catch (NurApiException e) {
              e.printStackTrace();
          }
+		try {
 		mNurApi.connect();
+				
+		} catch (Exception e) {
+			
+		} 
 		
 		while(!mNurApi.isConnected()){
 			try {
