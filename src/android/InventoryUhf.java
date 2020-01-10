@@ -78,10 +78,17 @@ public class InventoryUhf {
          } catch (NurApiException e) {
              e.printStackTrace();
          }
+		mNurApi.connect();
 		
+		while(!mNurApi.isConnected()){
+			try {
+         			Thread.sleep(100);
+         		}catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 			
-		try {
-			mNurApi.connect();
+		try {			
 			mNurApi.setSetupTxLevel(NurApi.TXLEVEL_9);
 		} catch (Exception e) {
 			
