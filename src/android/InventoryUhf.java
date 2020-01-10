@@ -24,7 +24,7 @@ public class InventoryUhf {
 
     //These values will be shown in the UI
     private String mUiStatusMsg;
-    private String mUiResultMsg;
+    public String mUiResultMsg;
     private String mUiEpcMsg;
     private int mUiStatusColor;
     private int mUiResultColor;
