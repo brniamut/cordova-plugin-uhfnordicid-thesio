@@ -124,6 +124,12 @@ public class InventoryUhf {
 		}
 		
 		try{
+			mAcTr.dispose();	
+		}catch(Exception e){
+			
+		}
+		
+		try{
 			mNurApi.disconnect();
 		}catch(Exception e){
 			
@@ -175,6 +181,18 @@ public class InventoryUhf {
             mUiResultMsg = ex.getMessage();
             //mUiResultColor = Color.RED;
         }
+	    
+	try{
+		mAcTr.dispose();	
+	}catch(Exception e){
+
+	}
+
+	try{
+		mNurApi.disconnect();
+	}catch(Exception e){
+
+	}
     }
     
     public String GetTags() {
