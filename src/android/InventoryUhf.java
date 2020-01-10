@@ -33,7 +33,7 @@ public class InventoryUhf {
     private boolean mTriggerDown;
 
     //This demo (Inventory stream) just counts different tags found
-    private int mTagsAddedCounter;
+    public int mTagsAddedCounter;
 
     //====== Global variables for ScanSingleTag thread operation ======
     //This counter add by one when single tag found after inventory. Reset to zero if multiple tags found.
