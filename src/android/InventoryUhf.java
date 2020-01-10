@@ -1,5 +1,6 @@
 package it.dynamicid;
 
+
 import com.nordicid.nurapi.*;
 import com.nordicid.tdt.*;
 
@@ -62,6 +63,29 @@ public class InventoryUhf {
 		} catch (Exception e) {
 			
 		} 
+	}
+	
+	public String Inv() {
+		String retval = "";
+		
+		 try {
+			NurRespInventory resp = mNurApi.inventory(2, 4, 0);
+			
+			List<String> lista = new ArrayList<String>();
+			for(int i=0; i<resp.numTagsFound; i++) {
+				NurTag tag = mNurApi.fetchTagAt(true, 0);
+				String epcString = NurApi.byteArrayToHexString(tag.getEpc());
+	            if(!lista.contains(epcString)) {
+	            	lista.add(epcString);
+	            	retval = retval + epcString + ",";
+	            }
+			}
+			
+		} catch (Exception e) {
+			retval = e.toString();
+		}
+		
+		return retval;
 	}
     
     
