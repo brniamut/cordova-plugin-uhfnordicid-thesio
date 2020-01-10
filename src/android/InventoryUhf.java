@@ -58,7 +58,7 @@ public class InventoryUhf {
 		super();
 		//mNurApi = new NurApi();
 		mNurApi = createNurApi();
-		mNurApi.setTransport(NurApiSerialTransport("/dev/ttyACM0", 115200));
+		//mNurApi.setTransport(NurApiSerialTransport("/dev/ttyACM0", 115200));
 			
 		mNurApi.connect();
 		
