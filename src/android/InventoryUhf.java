@@ -13,6 +13,8 @@ import static com.nordicid.nurapi.NurApi.BANK_TID;
 import static com.nordicid.nurapi.NurApi.BANK_USER;
 import static com.nordicid.nurapi.NurApi.MAX_EPC_LENGTH;
 
+import android.content.Context;
+
 public class InventoryUhf {
 
     public static final String TAG = "NUR_SAMPLE";
@@ -69,8 +71,9 @@ public class InventoryUhf {
          }
 
          try {
+             Context context = this.cordova.getActivity().getApplicationContext();
              String strAddress;
-             mAcTr = NurDeviceSpec.createAutoConnectTransport(null, mNurApi, spec);        
+             mAcTr = NurDeviceSpec.createAutoConnectTransport(context, mNurApi, spec);        
              strAddress = spec.getAddress();
              mAcTr.setAddress(strAddress);
          } catch (NurApiException e) {
