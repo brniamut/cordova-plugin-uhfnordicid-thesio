@@ -15,18 +15,18 @@ public class Uhfnordicid extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		if ("scan".equals(action)) {
-			scan(args.getString(0), args.getLong(1), callbackContext);
+			scan(args.getString(0), args.getLong(1), args.getLong(2), callbackContext);
 			return true;
 		}
 
 		return false;
 	}
 
-	private void scan(String epc, long waittime, CallbackContext callbackContext) {
+	private void scan(String epc, long waittime, long txpower, CallbackContext callbackContext) {
 		try {
 			 Context context = this.cordova.getActivity().getApplicationContext();
 			
-			InventoryUhf iu = new InventoryUhf(context);
+			InventoryUhf iu = new InventoryUhf(context, txpower);
 			
 			iu.StartInventoryStream();
 			try {
