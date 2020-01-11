@@ -56,13 +56,11 @@ Make Inventory of Tags.
 
 # Credits
 
-Company: Dynamic ID Srl
-Web: www.dynamic-id.it
-Email: info@dynamic-id.it
+Company: 
+Dynamic ID Srl - Web: www.dynamic-id.it - Email: info@dynamic-id.it
 
-Developers:
-Saverio Di Domenico (didomenico@dynamic-id.it)
-Luigi Casiello (casiello@dynamic-id.it)
+Developers: 
+Saverio Di Domenico (didomenico@dynamic-id.it) - Luigi Casiello (casiello@dynamic-id.it)
 
 
 
