@@ -38,7 +38,7 @@ It's also possible to set power of antenna before scanning.
 Make Inventory of Tags.
 
     var epcUHF = ''; //EMPTY if you  want to make full Inventory, in this case Scan Function return a String with all readed tags: For Example TAG1,TAG2,TAG3,
-    var epcUHF = 'TAG1'; //EPC of Tag that you are searching, in this case function return OK (tag is discovered) or KO (tag is not discovered)
+    //var epcUHF = 'TAG1'; //EPC of Tag that you are searching, in this case function return OK (tag is discovered) or KO (tag is not discovered)
     var waittimeUHF = 5000; //Scan duration in milliseconds (maximum 20000)
     var powerUHF = 9; //Possible values from 9 to 27
     
@@ -46,7 +46,7 @@ Make Inventory of Tags.
     uhfnordicid.scan(
                 epcUHF, waittimeUHF, powerUHF,
                 function(msg) {
-                    console.log(msg); //in msg you can see result of scan
+                    console.log(msg); //in msg you can see result of scan NO-TAGS / LIST / OK / KO
                 },
                 function(err) {
                     console.log(err);
