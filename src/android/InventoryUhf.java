@@ -1,7 +1,6 @@
 package it.dynamicid;
 
 
-
 import com.nordicid.nurapi.*;
 import com.nordicid.tdt.*;
 
@@ -61,7 +60,7 @@ public class InventoryUhf {
 
     //===================================================================
 
-	public InventoryUhf(Context context) {
+	public InventoryUhf(Context context, long txpower) {
 		super();
 		listaTags = new ArrayList<String>();
 		mNurApi = new NurApi();
@@ -97,8 +96,52 @@ public class InventoryUhf {
 			}
 		}
 			
-		try {			
-			mNurApi.setSetupTxLevel(NurApi.TXLEVEL_27);
+		try {	
+			
+			if(txpower==8) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_8);
+			}else if(txpower==9) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_9);
+			}else if(txpower==10) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_10);
+			}else if(txpower==11) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_11);
+			}else if(txpower==12) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_12);
+			}else if(txpower==13) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_13);
+			}else if(txpower==14) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_14);
+			}else if(txpower==15) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_15);
+			}else if(txpower==16) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_16);
+			}else if(txpower==17) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_17);
+			}else if(txpower==18) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_18);
+			}else if(txpower==19) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_19);
+			}else if(txpower==20) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_20);
+			}else if(txpower==21) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_21);
+			}else if(txpower==22) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_22);
+			}else if(txpower==23) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_23);
+			}else if(txpower==24) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_24);
+			}else if(txpower==25) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_25);
+			}else if(txpower==26) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_26);
+			}else if(txpower==27) {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_27);
+			}else {
+				mNurApi.setSetupTxLevel(NurApi.TXLEVEL_8);
+			}
+
 		} catch (Exception e) {
 			
 		} 
