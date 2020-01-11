@@ -40,7 +40,7 @@ Make Inventory of Tags.
     var epcUHF = ''; //EMPTY if you  want to make full Inventory, in this case Scan Function return a String with all readed tags: For Example TAG1,TAG2,TAG3,
     //var epcUHF = 'TAG1'; //EPC of Tag that you are searching, in this case function return OK (tag is discovered) or KO (tag is not discovered)
     var waittimeUHF = 5000; //Scan duration in milliseconds (maximum 20000)
-    var powerUHF = 9; //Possible values from 9 to 27
+    var powerUHF = 10; //Possible values from 8 to 27
     
     var uhfnordicid = new Uhfnordicid();
     uhfnordicid.scan(
