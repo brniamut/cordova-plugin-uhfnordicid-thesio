@@ -259,14 +259,16 @@ public class InventoryUhf {
     private NurApiListener mNurApiEventListener = new NurApiListener()
     {
         @Override
-        public void triggeredReadEvent(NurEventTriggeredRead event) { }
+        public void triggeredReadEvent(NurEventTriggeredRead event) {
+                     try {
+                           mAccExt.beepAsync(20); //Beep on device
+                         } catch (Exception e) {
+                             // TODO: handle exception
+                         }
+        }
         @Override
         public void traceTagEvent(NurEventTraceTag event) {
-            try {
-                  mAccExt.beepAsync(20); //Beep on device
-                } catch (Exception e) {
-                    // TODO: handle exception
-                }
+
         }
         @Override
         public void programmingProgressEvent(NurEventProgrammingProgress event) { }
