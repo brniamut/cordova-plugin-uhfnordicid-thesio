@@ -1,16 +1,16 @@
 {
-  "name": "cordova-plugin-uhfnordicid",
+  "name": "cordova-plugin-uhfnordicid-thesio",
   "version": "0.0.1",
   "description": "Cordova Rfid UHF Nordic ID Plugin",
   "cordova": {
-    "id": "cordova-plugin-uhfnordicid",
+    "id": "cordova-plugin-uhfnordicid-thesio",
     "platforms": [
       "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SaverioDiDomenico/cordova-plugin-uhfnordicid.git"
+    "url": "git+https://github.com/brniamut/cordova-plugin-uhfnordicid-thesio.git"
   },
   "keywords": [
     "cordova",
@@ -32,7 +32,7 @@
   "author": "Saverio Di Domenico",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfnordicid/issues"
+    "url": "https://github.com/brniamut/cordova-plugin-uhfnordicid-thesio.git/issues"
   },
-  "homepage": "https://github.com/SaverioDiDomenico/cordova-plugin-uhfnordicid#readme"
+  "homepage": "https://github.com/brniamut/cordova-plugin-uhfnordicid-thesio.git#readme"
 }

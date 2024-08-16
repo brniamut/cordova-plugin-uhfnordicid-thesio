@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-            id="cordova-plugin-uhfnordicid" version="0.0.1">
+            id="cordova-plugin-uhfnordicid-thesio" version="0.0.1">
         <name>Uhfnordicid</name>
-        <description>Cordova Rfid UHF Nordic ID Plugin</description>
+        <description>Cordova Rfid UHF Nordic ID Plugin adjusted by Thesio</description>
         <license>Apache 2.0</license>
         <keywords>cordova,device,rfid,uhf,nordic,id,nordicid</keywords>
 		<engines>
