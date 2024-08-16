@@ -261,7 +261,13 @@ public class InventoryUhf {
         @Override
         public void triggeredReadEvent(NurEventTriggeredRead event) { }
         @Override
-        public void traceTagEvent(NurEventTraceTag event) { }
+        public void traceTagEvent(NurEventTraceTag event) {
+            try {
+                  mAccExt.beepAsync(20); //Beep on device
+                } catch (Exception e) {
+                    // TODO: handle exception
+                }
+        }
         @Override
         public void programmingProgressEvent(NurEventProgrammingProgress event) { }
         @Override
