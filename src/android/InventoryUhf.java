@@ -282,14 +282,6 @@ public class InventoryUhf {
 
                     if(event.tagsAdded>0) {
                         //At least one new tag found
-                    	
-                    	try {
-                    		mAccExt.beepAsync(20); //Beep on device
-                    	}catch (Exception e) {
-							// TODO: handle exception
-						}
-                        
-
                         NurTagStorage tagStorage = mNurApi.getStorage(); //Storage contains all tags found
 
                         //Iterate just received tags based on event.tagsAdded
