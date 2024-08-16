@@ -259,18 +259,9 @@ public class InventoryUhf {
     private NurApiListener mNurApiEventListener = new NurApiListener()
     {
         @Override
-        public void triggeredReadEvent(NurEventTriggeredRead event) {
-
-        }
+        public void triggeredReadEvent(NurEventTriggeredRead event) { }
         @Override
-        public void traceTagEvent(NurEventTraceTag event) {
-            try {
-                           mAccExt.beepAsync(20); //Beep on device
-                         } catch (Exception e) {
-                             // TODO: handle exception
-                         }
-
-        }
+        public void traceTagEvent(NurEventTraceTag event) { }
         @Override
         public void programmingProgressEvent(NurEventProgrammingProgress event) { }
         @Override
@@ -279,7 +270,6 @@ public class InventoryUhf {
         public void logEvent(int level, String txt) { }
         @Override
         public void inventoryStreamEvent(NurEventInventory event) {
-        event.
 
             try {
                 if (event.stopped) {
@@ -292,6 +282,14 @@ public class InventoryUhf {
 
                     if(event.tagsAdded>0) {
                         //At least one new tag found
+
+                    	try {
+                    		mAccExt.beepAsync(20); //Beep on device
+                    	}catch (Exception e) {
+							// TODO: handle exception
+						}
+
+
                         NurTagStorage tagStorage = mNurApi.getStorage(); //Storage contains all tags found
 
                         //Iterate just received tags based on event.tagsAdded
@@ -338,13 +336,7 @@ public class InventoryUhf {
         @Override
         public void debugMessageEvent(String event) { }
         @Override
-        public void connectedEvent() {
-                    try {
-                                   mAccExt.beepAsync(20); //Beep on device
-                                 } catch (Exception e) {
-                                     // TODO: handle exception
-                                 }
-         }
+        public void connectedEvent() { }
         @Override
         public void clientDisconnectedEvent(NurEventClientInfo event) { }
         @Override
@@ -360,9 +352,7 @@ public class InventoryUhf {
         @Override
         public void tagTrackingScanEvent(NurEventTagTrackingData event) { }
         //@Override
-        public void tagTrackingChangeEvent(NurEventTagTrackingChange event) {
-
-        }
+        public void tagTrackingChangeEvent(NurEventTagTrackingChange event) { }
     };
 
     
