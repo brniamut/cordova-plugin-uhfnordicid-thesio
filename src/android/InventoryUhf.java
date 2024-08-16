@@ -260,9 +260,15 @@ public class InventoryUhf {
     {
         @Override
         public void triggeredReadEvent(NurEventTriggeredRead event) {
+
         }
         @Override
         public void traceTagEvent(NurEventTraceTag event) {
+            try {
+                           mAccExt.beepAsync(20); //Beep on device
+                         } catch (Exception e) {
+                             // TODO: handle exception
+                         }
 
         }
         @Override
@@ -273,6 +279,7 @@ public class InventoryUhf {
         public void logEvent(int level, String txt) { }
         @Override
         public void inventoryStreamEvent(NurEventInventory event) {
+        event.
 
             try {
                 if (event.stopped) {
@@ -331,7 +338,13 @@ public class InventoryUhf {
         @Override
         public void debugMessageEvent(String event) { }
         @Override
-        public void connectedEvent() { }
+        public void connectedEvent() {
+                    try {
+                                   mAccExt.beepAsync(20); //Beep on device
+                                 } catch (Exception e) {
+                                     // TODO: handle exception
+                                 }
+         }
         @Override
         public void clientDisconnectedEvent(NurEventClientInfo event) { }
         @Override
@@ -348,11 +361,7 @@ public class InventoryUhf {
         public void tagTrackingScanEvent(NurEventTagTrackingData event) { }
         //@Override
         public void tagTrackingChangeEvent(NurEventTagTrackingChange event) {
-                      try {
-                                   mAccExt.beepAsync(20); //Beep on device
-                                 } catch (Exception e) {
-                                     // TODO: handle exception
-                                 }
+
         }
     };
 
